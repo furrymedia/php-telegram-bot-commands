@@ -5,6 +5,8 @@
  * Fill in $bot_owner if you do any tinkering, otherwise it should never appear.
  *
  * (copyleft) @k_fox of https://furry.media
+ * https://twitter.com/furry_media
+ * https://github.com/furrymedia/php-telegram-bot-commands/
  */
 
 namespace Longman\TelegramBot\Commands\UserCommands;
