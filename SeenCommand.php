@@ -176,8 +176,9 @@ class SeenCommand extends UserCommand
 					$full_name = $user_row['last_name'] != '' ? $user_row['first_name'].' '.$user_row['last_name'] : $user_row['first_name'];
 					$chat_name = $chat_row['username'] == '' ? htmlspecialchars($chat_row['title']) : htmlspecialchars($chat_row['title']).' (@'.htmlspecialchars($chat_row['username']).')';
 					$chat_name = $chat_row['type'] == 'private' ? '[PRIVATE]' : $chat_name;
+					$user_name = $user_row['username'] == '' ? '' : ' (@'.htmlspecialchars($user_row['username']).')';
 
-					$text = htmlspecialchars($full_name).' (@'.htmlspecialchars($user_row['username']).") was last seen at ".htmlspecialchars($message_row['date'])."ET\n<strong>Group:</strong> $chat_name";
+					$text = htmlspecialchars($full_name)."{$user_name} was last seen at ".htmlspecialchars($message_row['date'])."ET\n<strong>Group</strong>: $chat_name";
 					if(($chat_row['username'] != '' and $chat_row['type'] != 'private') or $chat_row['id'] == $chat_id)
 					{
 						if(trim($message_row['text']) == '')
